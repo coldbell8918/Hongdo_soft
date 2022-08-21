@@ -27,10 +27,11 @@ def callback(data):
 
 def callback2(data):
     if data.data:
-        cmd(0,0)
-        rospy.sleep(10)
-    else:
         listener()
+        
+    else:
+        cmd(0,0)
+        rospy.sleep(5)
 
 
 def list():
@@ -42,6 +43,7 @@ def list():
 def listener():
     rospy.Subscriber('tracker', track, callback)
     pub_array = track()
+    rospy.spin()
 
 
 def cmd(linear, angular):
