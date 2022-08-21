@@ -11,13 +11,14 @@ def callback(data):
     # rospy.loginfo(data)
     # rospy.loginfo(data.position[0])
 
+
     if data.position[0] <260:
         rospy.loginfo('turn left')
         cmd(0, 0.1) 
 
     elif data.position[0] <410:
         rospy.loginfo('go')
-        cmd(0.1,0)
+        cmd(0.1, 0)
    
     else:
         rospy.loginfo('turn right')
@@ -26,22 +27,22 @@ def callback(data):
 
 def callback2(data):
     if data.data:
-        listener()
-    else:
         cmd(0,0)
+        rospy.sleep(10)
+    else:
+        listener()
 
 
 def list():
     # stop 토픽 받는 함수 생성
     rospy.Subscriber('stop', Bool, callback2)
     rospy.spin()
-    
+
 
 def listener():
     rospy.Subscriber('tracker', track, callback)
     pub_array = track()
-    # spin() simply keeps python from exiting until this node is stopped
-    rospy.spin()
+
 
 def cmd(linear, angular):
     pub=rospy.Publisher("cmd_vel", Twist, queue_size=10)
@@ -55,6 +56,7 @@ def cmd(linear, angular):
     cmd_msg.angular.z=angular
     pub.publish(cmd_msg)
     
+    
 if __name__ == '__main__':
-    rospy.init_node('listener', anonymous=True)
+    rospy.init_node('listener')
     list()

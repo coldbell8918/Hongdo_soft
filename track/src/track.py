@@ -220,14 +220,20 @@ def run(
 
                 # draw boxes for visualization
                 if len(outputs[i]) > 0:
+                    foutput=[]
+                    size=0
                     for j, (output, conf) in enumerate(zip(outputs[i], confs)):
     
                         bboxes = output[0:4]
                         id = output[4]
                         cls = output[5]
+                        ga=output[2]-output[0]
+                        se=output[3]-output[1]
+                                    
                         if int(cls) is 0:
-                            testt.append([output[0], output[1], output[2], output[3], output[4]])
-                            
+                            if ga*se > size:                               
+                                foutput=output
+                                size=ga*se    
                         if save_vid or save_crop or show_vid:  # Add bbox to image
                             c = int(cls)  # integer class
                             id = int(id)  # integer id
@@ -237,7 +243,7 @@ def run(
                             if save_crop:
                                 txt_file_name = txt_file_name if (isinstance(path, list) and len(path) > 1) else ''
                                 save_one_box(bboxes, imc, file=save_dir / 'crops' / txt_file_name / names[c] / f'{id}' / f'{p.stem}.jpg', BGR=True)
-
+                    testt.append([foutput[0], foutput[1], foutput[2], foutput[3], foutput[4]])
                 LOGGER.info(f'{s}Done. YOLO:({t3 - t2:.3f}s), StrongSORT:({t5 - t4:.3f}s)')
 
             else:
