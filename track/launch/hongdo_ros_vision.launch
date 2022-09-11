@@ -1,0 +1,4 @@
+<launch>
+  <node name="trackpub" type="track.py" pkg="track" output="screen"/>
+  <node name="pubcmd" type="pubcmd.py" pkg="track" output="screen"/>
+</launch>
