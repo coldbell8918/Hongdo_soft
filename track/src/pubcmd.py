@@ -17,15 +17,15 @@ def tracker_callback(data):
     else:
         if data.position[0] <260:
             rospy.loginfo('turn right')
-            cmd(0, 0.1) 
+            cmd(0, 0.2) 
 
         elif data.position[0] <410:
             rospy.loginfo('go')
-            cmd(0.1, 0)
+            cmd(0.2, 0)
     
         else:
             rospy.loginfo('turn left')
-            cmd(0, -0.1)
+            cmd(0, -0.2)
 
 
 def stop_callback(data):
