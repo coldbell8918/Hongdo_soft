@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+from ast import Global
 from turtle import position
 import time
 import rospy
@@ -7,10 +8,17 @@ from std_msgs.msg import Float64MultiArray
 from std_msgs.msg import Bool
 from sol_msg.msg import track
 from geometry_msgs.msg import Twist
+from std_srvs.srv import Trigger, TriggerResponse
+from track.srv import PlaySong, PlaySongResponse
+import os
+
 
 stop = 1
+cnt=0
 
 def tracker_callback(data):
+    global cnt
+    play_song_client(1)
     if (stop):
         rospy.loginfo('stop')
         cmd(0, 0)
@@ -25,7 +33,25 @@ def tracker_callback(data):
     
         else:
             rospy.loginfo('turn left')
+<<<<<<< HEAD
             cmd(0, -0.2)
+=======
+            cmd(0, -0.1)
+    cnt+=1
+    if cnt==1000:
+        cnt=0
+
+
+
+def play_song_client(number):
+    rospy.wait_for_service('play_voice')
+    try:
+        play_song = rospy.ServiceProxy('play_voice',PlaySong)
+        return play_song(number)
+    except rospy.ServiceException as e:
+        print("Service call failed: %s"%e)
+    
+>>>>>>> 512ff3f0cd1087654c765f70c757586bb2b3894a
 
 
 def stop_callback(data):
