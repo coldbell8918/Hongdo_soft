@@ -11,11 +11,10 @@ We used a Jetson nano with Jetpack 4.6.1 and ROS melodic installed.
 - ### install opencv 4.5.4
   The installation of opencv is required to run this package.
   
-  '''
-    $ wget https://github.com/Qengineering/Install-OpenCV-Jetson-Nano/raw/main/OpenCV-4-5-4.sh
+    '$ wget https://github.com/Qengineering/Install-OpenCV-Jetson-Nano/raw/main/OpenCV-4-5-4.sh'
     $ sudo chmod 755 ./OpenCV-4-5-4.sh
     $ ./OpenCV-4-5-4.sh
-  '''
+  
   
 - ### install PyTorch 1.8 + torchvision v0.9.0
   The installation of Pytorch and torchvision is required to run this package.
