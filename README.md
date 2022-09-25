@@ -7,7 +7,7 @@ main project | https://github.com/Hanyang-WAB/hongdo_system <br><br>
 
 ## Description
 We designed the robot by referring to the following site. The robot recognizes obstacle based on the Yolov5 and can track people.
-Yolov5_StrongSORT_OSNet | https://github.com/mikel-brostrom/Yolov5_StrongSORT_OSNet#introduction <br><br>
+**Yolov5_StrongSORT_OSNet** | https://github.com/mikel-brostrom/Yolov5_StrongSORT_OSNet#introduction <br><br>
 
 Hongdo_ros_soft contains the content that the robot recognizes and follows a person.
   * **Human detect**: Based on the YoloV5, the robot recognizes a person and obtains the size and coordinates for that person.
