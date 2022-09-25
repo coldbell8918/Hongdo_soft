@@ -6,20 +6,20 @@ main project | https://github.com/Hanyang-WAB/hongdo_system <br><br>
 ![hong_do_2](https://user-images.githubusercontent.com/98142691/192149740-f85e851a-8d84-4f00-83b9-605ca63cdc51.gif)
 
 ## Description
-- ### reference
+- ### Reference
   We designed the robot by referring to the following site. The robot recognizes obstacle based on the Yolov5 and can track people.  
   * **Yolov5_StrongSORT_OSNet** | https://github.com/mikel-brostrom/Yolov5_StrongSORT_OSNet#introduction <br><br>  
     
-- ### introduction
+- ### Introduction
   Hongdo_ros_soft contains the content that the robot recognizes and follows a person.
     * **Human detect**: Based on the YoloV5, the robot recognizes a person and obtains the size and coordinates for that person.
     * **Import ROS**: This package sends the output that size, number, coordinate of recogniged person.
  
 
-## installation
+## Installation
 We used a Jetson nano with Jetpack 4.6.1 and ROS melodic installed.
 
-- ### install opencv 4.5.4
+- ### Install opencv 4.5.4
   The installation of opencv is required to run this package.
     ```
     $ wget https://github.com/Qengineering/Install-OpenCV-Jetson-Nano/raw/main/OpenCV-4-5-4.sh
@@ -27,7 +27,7 @@ We used a Jetson nano with Jetpack 4.6.1 and ROS melodic installed.
     $ ./OpenCV-4-5-4.sh
     ```
   
-- ### install PyTorch 1.8 + torchvision v0.9.0
+- ### Install PyTorch 1.8 + torchvision v0.9.0
   The installation of Pytorch and torchvision is required to run this package.
   
     ```
@@ -43,7 +43,7 @@ We used a Jetson nano with Jetpack 4.6.1 and ROS melodic installed.
     $ cd ../  
     ```
   
-- ### requirement
+- ### Requirement
   Make sure that you fulfill all the requirements: Python 3.6.9 or later with all requirements.txt dependencies installed, including torch>=1.7. To install, run:
   
     ```
@@ -52,7 +52,7 @@ We used a Jetson nano with Jetpack 4.6.1 and ROS melodic installed.
     ```
     
 ## Getting Started
-- ### build
+- ### Build
   To run this package, clone the package and build it.
   
     ```
@@ -62,7 +62,7 @@ We used a Jetson nano with Jetpack 4.6.1 and ROS melodic installed.
     $ catkin_make
     ```
   
-- ### run
+- ### Run
   Run through the following command
   
     ```
