@@ -2,6 +2,9 @@
 main project | https://github.com/Hanyang-WAB/hongdo_system <br><br>
 
 # hongdo_ros_soft
+![hong_do_1](https://user-images.githubusercontent.com/98142691/192149706-c6497f09-81c8-448e-b132-7e2f2a023c04.gif)
+![hong_do_2](https://user-images.githubusercontent.com/98142691/192149740-f85e851a-8d84-4f00-83b9-605ca63cdc51.gif)
+
 ## Description
 Hongdo_ros_soft contains the content that the robot recognizes and follows a person.
   * **Human detect**: Based on the YoloV5, the robot recognizes a person and obtains the size and coordinates for that person.
