@@ -13,7 +13,8 @@ main project | https://github.com/Hanyang-WAB/hongdo_system <br><br>
 - ### Introduction
   Hongdo_ros_soft contains the content that the robot recognizes and follows a person.
     * **Human track**: Based on the YoloV5, the robot tracking people and obtains the size and coordinates for nearest person
-    * **Import ROS**: This package sends the output that size, number, coordinate of recogniged person. Then 
+    * **Import ROS**: This package sends the output that size, number, coordinate of recogniged person.
+    * **Human following**: Depending on the location and distance from the person, the robot approaches the person and stops at a certain distance
  
 
 ## Installation
