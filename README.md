@@ -2,8 +2,10 @@
 main project | https://github.com/Hanyang-WAB/hongdo_system <br><br>
 
 # hongdo_ros_soft
-## Description
-write description
+Hongdo_ros_soft contains the content that the robot recognizes and follows a person.
+  * **Human detect**: Based on the YoloV5, the robot recognizes a person and obtains the size and coordinates for that person.
+  * **Import ROS**: This package sends the output that size, number, coordinate of recogniged person.
+ 
 
 ## installation
 We used a Jetson nano with Jetpack 4.6.1 and ROS melodic installed.
